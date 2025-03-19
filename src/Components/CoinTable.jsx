@@ -60,7 +60,7 @@ const CoinTable = () => {
             />
             <button
               type="submit"
-              className="bg-indigo-600 text-white text-lg w-[100px] px-4 py-3 rounded-md cursor-pointer hover:bg-indigo-700 transition ml-[-8px]"
+              className="bg-indigo-600 text-white text-lg w-[100px] px-4 py-3 rounded-md cursor-pointer hover:bg-indigo-700 transition ml-[-25px]"
             >
               Search
             </button>
