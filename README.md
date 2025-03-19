@@ -1,12 +1,43 @@
-# React + Vite
+# 🪙 Crypto Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mini project for real-time cryptocurrency tracking using **React.js**, **Tailwind CSS**, and the **CoinGecko API**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Technologies Used
 
-## Expanding the ESLint configuration
+- ⚡ **Vite** → Fast project setup
+- ⚛️ **React.js** → Component-based UI
+- 🎨 **Tailwind CSS** → Modern and responsive design
+- 🔎 **React Icons** → Icon library for better UI/UX
+- 📡 **CoinGecko API** → Fetching real-time crypto data
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/sadournyg/Crypto-Tracking.git
+
+cd Crypto-Tracking
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+## 🚀 Deployment
+
+This project is deployed on [Vercel](https://vercel.com).
+
+---
+
+## 🧑‍💻 Author
+
+**Guillaume Sadourny**  
+Aspiring Full Stack Developer  
+[linkedIn](https://www.linkedin.com/in/guillaume-sadourny/)  
+💬 Feel free to fork, star, or contribute! 🚀
