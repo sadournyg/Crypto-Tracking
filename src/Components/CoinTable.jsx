@@ -1,10 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import bgImage from "../assets/crypt.jpg";
 import Navbar from "./Navbar";
 import { CoinContext } from "../Context/CoinContext";
 
 const CoinTable = () => {
   const { allCoin, currency } = useContext(CoinContext);
+
+  const [displayCoin, setDisplayCoin] = useState([]);
+
+  const [input, setInput] = useState("");
+
+  const inputHandler = (event) => {
+    setInput(event.target.value);
+    if (event.target.value === "") {
+      setDisplayCoin(allCoin);
+    }
+  };
+
+  const searchHandler = async (event) => {
+    event.preventDefault();
+    const coins = await allCoin.filter((item) => {
+      return item.name.toLowerCase().includes(input.toLowerCase());
+    });
+    setDisplayCoin(coins);
+  };
+  useEffect(() => {
+    setDisplayCoin(allCoin);
+  }, [allCoin]);
+
   return (
     <div>
       <div className="pb-[3rem]">
@@ -23,8 +46,13 @@ const CoinTable = () => {
               checking plateform. Get real-time updates, track your portfolio,
               and verify transactions with ease.
             </p>
-            <form className="relative z-10 flex items-center w-[60%] bg-white rounded-md p-2 text-[20px] ml-[-130px] gap-3 ">
+            <form
+              onSubmit={searchHandler}
+              className="relative z-10 flex items-center w-[60%] bg-white rounded-md p-2 text-[20px] ml-[-130px] gap-3 "
+            >
               <input
+                value={input}
+                onChange={inputHandler}
                 type="text"
                 placeholder="Search crypto"
                 className="flex-1 text-[16px] outline-none border-none pl-2 text-black"
@@ -50,7 +78,7 @@ const CoinTable = () => {
             <p className="text-right">Market Cap</p>
           </div>
 
-          {allCoin.slice(0, 12).map((item, index) => (
+          {displayCoin.slice(0, 12).map((item, index) => (
             <div
               key={index}
               className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1.5fr] p-4 items-center border-b border-gray-700 last:border-none"
